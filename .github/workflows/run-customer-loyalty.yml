@@ -7,9 +7,9 @@ on:
     # Trigger workflow when any of these files change
     paths:
       - 'src/app/agents/customerLoyaltyAgent_initializer.py'
-      - 'src/app/tools/discountLogic.py'
-      - 'src/prompts/CustomerLoyaltyAgentPrompt.txt'
-      - '.github/workflows/run-customer-loyalty.yml'
+      # - 'src/app/tools/discountLogic.py'
+      # - 'src/prompts/CustomerLoyaltyAgentPrompt.txt'
+      # - '.github/workflows/run-customer-loyalty.yml'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
