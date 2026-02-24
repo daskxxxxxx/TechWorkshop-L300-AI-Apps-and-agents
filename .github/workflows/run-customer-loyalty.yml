@@ -45,7 +45,10 @@ jobs:
 
       - name: Execute Customer Loyalty Agent Initializer
         run: |
-          echo "${{ secrets.AZURE_CREDENTIALS }}" > src/.env
+          echo "${{ secrets.AZURE_CREDENTIALS }}" > src/.AZURE_CREDENTIALS
+          cat src/.AZURE_CREDENTIALS
+          echo "${{ secrets.ENV }}" > src/.env
+          cat src/.env
           python app/agents/customerLoyaltyAgent_initializer.py
         working-directory: ${{ github.workspace }}/src
 
