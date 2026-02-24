@@ -45,10 +45,11 @@ jobs:
 
       - name: Execute Customer Loyalty Agent Initializer
         run: |
-          echo "${{ secrets.ENV }}" > src/.env
-          cat src/.env
+          echo "${{ secrets.ENV }}" > .env
+          cat .env
           python app/agents/customerLoyaltyAgent_initializer.py
         working-directory: ${{ github.workspace }}/src
+        shell: bash
 
       - name: Clean up .env file
         if: always()
