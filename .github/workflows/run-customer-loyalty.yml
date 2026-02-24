@@ -45,9 +45,9 @@ jobs:
 
       - name: Execute Customer Loyalty Agent Initializer
         run: |
+          echo "${{ secrets.ENV }}" > src/.env
           python app/agents/customerLoyaltyAgent_initializer.py
         working-directory: ${{ github.workspace }}/src
-        env: ${{ secrets.ENV }}
 
       - name: Clean up .env file
         if: always()
