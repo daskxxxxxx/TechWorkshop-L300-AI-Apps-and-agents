@@ -21,8 +21,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the code
 COPY . .
 
-# Copy .env file into the image (for python-dotenv)
-COPY .env .env
+# Create .env file from build argument if provided (python-dotenv expects it)
+# ENV_FILE_CONTENT will be passed as a build-arg from the GitHub Actions workflow.
+ARG ENV_FILE_CONTENT
+RUN if [ -n "$ENV_FILE_CONTENT" ]; then \
+      echo "$ENV_FILE_CONTENT" > .env; \
+    fi
 
 # Expose the port (default FastAPI/uvicorn port)
 EXPOSE 8000
