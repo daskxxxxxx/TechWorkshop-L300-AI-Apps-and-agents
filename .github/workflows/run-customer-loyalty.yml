@@ -52,9 +52,9 @@ jobs:
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
           COSMOS_ENDPOINT: ${{ secrets.COSMOS_ENDPOINT }}
-          # COSMOS_KEY: ${{ secrets.COSMOS_KEY }}
-          # COSMOS_DATABASE: ${{ secrets.COSMOS_DATABASE }}
-          # COSMOS_CONTAINER: ${{ secrets.COSMOS_CONTAINER }}
+          COSMOS_KEY: ${{ secrets.COSMOS_KEY }}
+          COSMOS_DATABASE: ${{ secrets.COSMOS_DATABASE }}
+          COSMOS_CONTAINER: ${{ secrets.COSMOS_CONTAINER }}
 
       - name: Clean up .env file
         if: always()
